@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+// File: README.md
+# Kanban Board React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern Kanban board application built with React, Redux, and React DnD.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Kanban board with four columns: To Do, In Progress, Peer Review, and Done
+- Drag and drop functionality for easy task management
+- Search functionality to filter tasks across all columns
+- Add new tasks with title and description
+- Responsive design for all screen sizes
+- Persistent storage using localStorage
+- Smooth animations and transitions
+- Toast notifications for user feedback
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- Redux for state management
+- React DnD for drag and drop functionality
+- React Icons for UI icons
+- LocalStorage for data persistence
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup and Installation
 
-### `npm test`
+1. Clone the repository:
+```bash
+git clone https://github.com/PavanGoud547/kanban-board.git
+cd kanban-board
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
+```bash
+npm install
+```
 
-### `npm run build`
+3. Start the development server:
+```bash
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Open your browser and navigate to `http://localhost:3000`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+├── components/         # React components
+│   ├── KanbanBoard.jsx # Main board component
+│   ├── KanbanColumn.jsx # Column component
+│   ├── TaskCard.jsx    # Task card component
+│   ├── AddTaskModal.jsx # Modal for adding tasks
+│   └── Toast.jsx       # Toast notification component
+├── store/              # Redux store setup
+│   ├── index.js        # Store configuration
+│   ├── actions.js      # Redux actions
+│   ├── reducers.js     # Redux reducers
+│   └── localStorage.js # Local storage utilities
+├── App.jsx             # Main App component
+├── App.css             # Main styles
+└── index.js            # Application entry point
+```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Add new tasks by clicking the floating "+" button
+- Move tasks between columns by dragging and dropping
+- Search for tasks using the search bar at the top
+- Tasks are automatically saved to localStorage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Customization
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Column colors can be modified in App.css (look for column-* classes)
+- You can modify the initial tasks in src/store/reducers.js
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
 
-## Learn More
+## Kanban Board Application Documentation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- https://drive.google.com/file/d/10fvDkf7ZP9U3-tEIL1TGhXSLxHW4v7X9/view?usp=sharing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+MIT
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+// File: package.json
+{
+  "name": "kanban-board",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.7",
+    "react": "^18.2.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "react-redux": "^8.1.3",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
