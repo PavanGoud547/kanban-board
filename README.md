@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // File: README.md
 # Kanban Board React Application
 
@@ -122,3 +123,6 @@ MIT
     ]
   }
 }
+=======
+
+>>>>>>> b9ac894b75248d2468e6c3272ad35037d54a9ab7
